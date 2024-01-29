@@ -18,12 +18,26 @@
 
     <main>
         <div class="container">
-            <div class="row">
+            <div class="row row-cols-1 row-cols-md-4">
                 @foreach ($movies as $movie)
-                    <div class="col-3">
-                        <ul class="d-flex list-unstyled gap-3">
-                            <li>{{ $movie['title'] }}</li>
-                        </ul>
+                    <div class="col mb-4">
+                        <div class="card h-100 w-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $movie['title'] }}</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">{{ $movie['original_title'] }}</h6>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <p>{{ $movie['nationality'] }}</p>
+                                    </li>
+                                    <li>
+                                        <p>{{ $movie['date'] }}</p>
+                                    </li>
+                                    <li>
+                                        <p>{{ $movie['vote'] }}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 @endforeach
             </div>
